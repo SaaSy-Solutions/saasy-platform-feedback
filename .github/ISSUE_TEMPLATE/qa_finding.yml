@@ -1,0 +1,83 @@
+name: QA finding
+description: Submit a structured test result or quality-assurance finding
+title: "[QA]: "
+body:
+  - type: markdown
+    attributes:
+      value: Use this form for structured QA findings. Use the bug form for ordinary user-reported defects.
+  - type: input
+    id: scenario
+    attributes:
+      label: Test scenario
+      placeholder: What workflow or requirement was being tested?
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Test environment and build
+      placeholder: Production, staging, build/version, browser/device
+    validations:
+      required: true
+  - type: textarea
+    id: prerequisites
+    attributes:
+      label: Preconditions and test data
+      description: Describe safe, non-sensitive prerequisites. Do not publish real customer data.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Test steps
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed result
+    validations:
+      required: true
+  - type: dropdown
+    id: repeatability
+    attributes:
+      label: Repeatability
+      options:
+        - 100 percent reproducible
+        - Intermittent
+        - Could not reproduce again
+        - Not retested
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Suggested severity
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+        - Informational
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and notes
+      description: Add redacted screenshots, recordings, correlation IDs, or safe logs.
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmation
+      options:
+        - label: I searched for an existing report.
+          required: true
+        - label: I removed sensitive information and real customer data.
+          required: true
+        - label: This finding does not disclose a security vulnerability.
+          required: true

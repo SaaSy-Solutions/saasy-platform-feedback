@@ -1,0 +1,58 @@
+name: Accessibility issue
+description: Report a barrier affecting assistive technology or accessible use
+title: "[Accessibility]: "
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Page, feature, or component
+    validations:
+      required: true
+  - type: textarea
+    id: barrier
+    attributes:
+      label: Accessibility barrier
+      description: Describe the problem and how it affects use.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected accessible behavior
+    validations:
+      required: true
+  - type: input
+    id: assistive_technology
+    attributes:
+      label: Assistive technology
+      placeholder: NVDA, JAWS, VoiceOver, keyboard only, zoom, voice control
+  - type: input
+    id: environment
+    attributes:
+      label: Browser, operating system, and device
+    validations:
+      required: true
+  - type: input
+    id: standard
+    attributes:
+      label: Related WCAG criterion, if known
+      placeholder: WCAG 2.2 - 2.1.1 Keyboard
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Additional context or redacted evidence
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmation
+      options:
+        - label: I searched existing issues for duplicates.
+          required: true
+        - label: I removed sensitive information.
+          required: true
